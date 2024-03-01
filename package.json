@@ -1,0 +1,17 @@
+{
+  "name": "NodeJsCRUD",
+  "version": "1.0.0",
+  "description": "this is a node js crud application with MVC Arch.",
+  "main": "index.js",
+  "repository": "https://github.com/chaudharyali0737/NodeJsCRUD.git",
+  "author": "Ali Akbar <chaudhary.ali.0737@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "react-bootstrap": "^2.10.1"
+  },
+
+    "type": "module"
+
+  
+}

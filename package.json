@@ -1,12 +1,13 @@
 {
   "name": "NodeJsCRUD",
   "version": "1.0.0",
-  "description": "this is a node js crud application with MVC Arch.",
-  "main": "index.js",
+  "description": "This is a Node.js CRUD application with MVC architecture.",
+  "main": "src/routes/server.js",
   "repository": "https://github.com/chaudharyali0737/NodeJsCRUD.git",
   "author": "Ali Akbar <chaudhary.ali.0737@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "chalk": "^5.3.0",
     "express": "^4.18.3",
     "react-bootstrap": "^2.10.1"

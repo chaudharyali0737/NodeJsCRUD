@@ -1,10 +1,10 @@
 // Importing the HTTP module
 import { createServer } from "http";
 // import { connectToDatabase } from '../database/DB.js';  // Add .js extension if necessary
-import * as d1 from "../database/DB.js";
+import connectToDatabase from "../database/DB.mjs";
 
 // Connect to the database
-d1.connectToDatabase();
+connectToDatabase();
 // Define the port
 const port = 5000;
 

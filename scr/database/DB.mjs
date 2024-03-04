@@ -1,11 +1,13 @@
       import pg from "pg";
       import { readFileSync, readdirSync } from "fs";
-      import { join } from "path";
-      import config from '../configs/config';
+      import { dirname, join } from "path";
+      import config from "../configs/config.mjs";
+      import { fileURLToPath } from 'url';
 
       const pool = new pg.Client(config.database)
-
-      // Function to run SQL file
+      const __filename = fileURLToPath(import.meta.url);
+      const __dirname = dirname(__filename);
+      // Function to run SQL file=
       async function runSqlFile(filePath) {
         try {
           const sql = readFileSync(filePath, "utf8");
@@ -17,7 +19,7 @@
       }
 
       // Function to connect to the database
-      async function connectToDatabase() {
+    export default  async function connectToDatabase() {
         try {
           await pool.connect();
           console.log("Connected to the database");
@@ -33,6 +35,4 @@
         }
       }
 
-      module.exports = {
-        connectToDatabase,
-      };
+     

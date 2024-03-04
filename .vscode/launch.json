@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\scr\\routes\\server.js"
+            "program": "${workspaceFolder}\\scr\\routes\\server.mjs"
         }
     ]
 }

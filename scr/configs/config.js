@@ -1,7 +1,12 @@
-export const database = {
-    user: 'postgres',
-    password: 'postres',
-    host: 'localhost',
-    port: 5432,
-    database: 'postres'
+
+const config = {
+  database: {
+    host: "localhost",
+    user: "postgres",
+    password: "postgres",
+    database: "postgres",
+  },
 };
+
+export default config;
+

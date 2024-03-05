@@ -1,19 +1,15 @@
+import db from "../database/DB.mjs";
 
-import { createServer } from "http";
-import connectToDatabase from "../database/DB.mjs";
-
-connectToDatabase();
-const port = 5000;
-const server = createServer((req, res) => {
-  if (req.url === "/") {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("Welcome to my server!");
-  } else {
-    res.writeHead(404);
-    res.end("404 Not Found");
+async function getUser(req, res) {
+  try {
+    const userId = req.query.id;
+    const response = await db.getUser(userId); // Await the result of getUser
+    console.log("User ID:", response.row[0]);
+    res.json(response); // Send the response to the client
+  } catch (error) {
+    console.error("Error in getUser:", error);
+    res.status(500).json({ error: "Internal server error" }); // Handle errors
   }
-});
+}
 
-server.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+export default getUser;

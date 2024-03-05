@@ -9,11 +9,11 @@
   },
   "author": "Ali Akbar <chaudhary.ali.0737@gmail.com>",
   "license": "MIT",
-
   "scripts": {
     "start": "node src/routes/server.mjs"
   },
   "dependencies": {
+    "express": "^4.18.3",
     "pg": "^8.11.3"
   }
 }

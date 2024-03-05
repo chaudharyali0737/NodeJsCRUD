@@ -46,11 +46,8 @@ db-init:
 
 # Connect to db
 .PHONY: db-connect
-db-connect:
+db-connect: 
     @echo "-- [DB CONNECT] --"
-    docker exec -e PGHOST=$(DB_HOST) \
-                 -e PGPORT=$(DB_PORT) \
-                 -e PGDATABASE=$(DB_NAME) \
-                 -e PGUSER=$(DB_USERNAME) \
-                 -e PGPASSWORD=$(DB_PASSWORD) \
-                 -it $(NAME)-db psql
+    docker exec -e PGHOST=$(DB_HOST)  PGPORT=$(DB_PORT)  PGDATABASE=$(DB_NAME)  PGUSER=$(DB_USERNAME)  PGPASSWORD=$(DB_PASSWORD)  -it $(NAME)-db psql
+
+# docker exec -e PGHOST=localhost PGDATABASE=postgres PGUSER=postgres  PGPASSWORD=postgres -it backend-db-node psql

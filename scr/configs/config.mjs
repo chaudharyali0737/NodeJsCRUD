@@ -5,6 +5,7 @@ const config = {
     user: "postgres",
     password: "postgres",
     database: "postgres",
+    port:2345,
   },
 };
 

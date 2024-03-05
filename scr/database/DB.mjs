@@ -5,10 +5,9 @@
       import { fileURLToPath } from 'url';
 
       const pool = new pg.Client(config.database)
-      const __filename = fileURLToPath(import.meta.url);
-      const __dirname = dirname(__filename);
-      // Function to run SQL file=
+
       async function runSqlFile(filePath) {
+        
         try {
           const sql = readFileSync(filePath, "utf8");
           await pool.query(sql);
@@ -18,13 +17,13 @@
         }
       }
 
-      // Function to connect to the database
     export default  async function connectToDatabase() {
+      const __filename = fileURLToPath(import.meta.url);
+      const __dirname = dirname(__filename);
         try {
           await pool.connect();
           console.log("Connected to the database");
 
-          // Run your SQL files here
           const sqlDir = join(__dirname, "migrations");
           const sqlFiles = readdirSync(sqlDir);
           for (const file of sqlFiles) {

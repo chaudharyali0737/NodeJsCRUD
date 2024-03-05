@@ -41,7 +41,27 @@ async function connectToDatabase() {
     console.error("Error connecting to the database:", err);
   }
 }
+class User {
+  constructor(username, email, city) {
+    this.username = username;
+    this.email = email;
+    this.city = city;
+  }
+
+  async save() {
+    try {
+      const query =
+        "INSERT INTO users (username, email,city) VALUES ($1, $2,$3) RETURNING *";
+      const values = [this.username, this.email, this.city];
+      const result = await pool.query(query, values);
+      return result.rows[0]; // Return the inserted user data
+    } catch (error) {
+      throw error;
+    }
+  }
+}
 export default {
   getUser,
   connectToDatabase,
+  User  
 };

@@ -16,9 +16,9 @@ async function addUser(req, res) {
 }
 async function getUser(req, res) {
   try {
-    const userId = req.query.id;
+    const userId = req.body.id;
     const response = await db.getUser(userId); // Await the result of getUser
-    console.log("User ID:", response.row[0]);
+    console.log("User ID:", response);
     res.json(response); // Send the response to the client
   } catch (error) {
     console.error("Error in getUser:", error);

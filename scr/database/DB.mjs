@@ -54,7 +54,7 @@ class User {
         "INSERT INTO users (username, email,city) VALUES ($1, $2,$3) RETURNING *";
       const values = [this.username, this.email, this.city];
       const result = await pool.query(query, values);
-      return result.rows[0]; // Return the inserted user data
+      return result.rows[0]; 
     } catch (error) {
       throw error;
     }
